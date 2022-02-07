@@ -31,6 +31,19 @@ Requests/sec:    113.29
 Transfer/sec:     12.94KB
 ```
 
+### 500m CPU, 100Mi memory, 12 replicas, 1 worker
+
+```shell
+Running 10s test @ http://127.0.0.1:50479
+  16 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   355.87ms   76.24ms 799.50ms   87.69%
+    Req/Sec    12.20      5.87    30.00     60.89%
+  1766 requests in 10.10s, 201.78KB read
+Requests/sec:    174.78
+Transfer/sec:     19.97KB
+```
+
 ### 6000m CPU, 1200Mi memory, 1 replica, 6 workers
 
 ```shell
