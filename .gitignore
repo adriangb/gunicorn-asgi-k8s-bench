@@ -1,0 +1,13 @@
+/*
+/*/
+
+!/app.py
+!/.gitignore
+!/Dockerfile
+!/Makefile
+!/requirements.txt
+!/manifest.yaml
+!/README.md
+
+**/__pycache__
+**/.DS_Store

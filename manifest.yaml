@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-example
+spec:
+  selector:
+    matchLabels:
+      app: deployment-example
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: deployment-example
+    spec: 
+      containers:
+      - name: deployment-example-pod
+        image: adriangb/k8s-gunicorn-test:latest
+        ports:
+          - containerPort: 80
+        resources:
+          requests:
+            cpu: 6000m
+            memory: 1200Mi
+        env:
+          - name: WEB_CONCURRENCY
+            value: "13"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-example
+spec:
+  type: NodePort
+  selector:
+    app: deployment-example
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
